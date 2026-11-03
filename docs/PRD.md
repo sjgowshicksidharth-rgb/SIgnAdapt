@@ -1,324 +1,384 @@
 # SignAdapt — Product Requirements Document (PRD)
 
-**Project Name:** SignAdapt
-**Document Type:** Product Requirements Document
-**Project Category:** AI/ML, Deep Learning, Multimodal Communication
-**Status:** Initial Draft
-**Version:** 1.0
+**Project Name:** SignAdapt  
+**Document Type:** Product Requirements Document  
+**Project Category:** AI/ML, Deep Learning, Multimodal Communication and Accessible Learning  
+**Status:** Revised Draft  
+**Version:** 1.1  
+**Related Document:** `architecture.md`
 
 ---
 
 ## 1. Project Overview
 
-SignAdapt is a multimodal AI-based communication system designed to improve communication between sign-language users and people who primarily communicate through text or speech.
+SignAdapt is an ISL-first multimodal communication and interactive sign-language learning platform. It aims to improve communication between Indian Sign Language (ISL) users and people who primarily communicate through text or speech.
 
-The system will accept three input modalities: text, voice, and sign-language input. It will process these inputs using appropriate machine learning and deep learning techniques and generate text and speech outputs.
+The planned application accepts three primary input modalities:
 
-The initial version will focus on establishing reliable input processing, cross-modal communication, and text-to-speech functionality. Generating sign-language output will be considered a future extension.
+- **Text:** users enter text through the interface.
+- **Voice:** users provide live microphone input or a supported audio recording.
+- **Sign language:** users provide a camera stream or supported video containing signs.
 
-The project will follow a research-oriented development approach, allowing different model architectures, input-processing techniques, and evaluation strategies to be investigated and compared.
+The platform is designed to produce text and speech outputs from supported inputs. It also includes an avatar-based sign presentation experience for supported content and an interactive learning area where users can study signs and practise them using camera-based recognition and feedback.
+
+The initial language focus is **Indian Sign Language (ISL)**. Support for American Sign Language (ASL) or other sign languages is a future extension requiring suitable datasets, language-specific processing, and evaluation. The system must not assume that a model trained for one sign language automatically works for another.
+
+SignAdapt is both a software application and a research-oriented AI/ML project. Model selection, dataset preparation, evaluation, limitations, and experimental results must be documented. The application must clearly distinguish implemented functionality from planned or illustrative UI elements.
 
 ## 2. Problem Statement
 
-Communication between sign-language users and people unfamiliar with sign language can be difficult because of differences in their primary communication methods.
+Communication between sign-language users and people unfamiliar with sign language can be difficult because they use different primary communication methods. Existing tools often focus on individual tasks such as speech recognition, text-to-speech, or isolated sign recognition, rather than presenting these capabilities in one accessible workflow.
 
-Existing communication tools often address individual tasks, such as speech recognition, text-to-speech conversion, or isolated sign-language recognition, without necessarily providing an integrated multimodal workflow.
+There is a need to investigate an integrated system that can accept text, voice, and sign-language input, convert supported inputs into a common text representation, and provide accessible text and speech outputs. A complementary learning experience can help users study ISL signs and practise them with model-assisted feedback.
 
-There is a need to investigate a unified system that can accept text, voice, and sign-language input and convert the interpreted information into accessible text and speech outputs.
-
-SignAdapt aims to address this problem by developing and evaluating a multimodal communication pipeline.
+SignAdapt aims to address these needs through a modular communication pipeline and an interactive learning interface, while acknowledging that sign recognition and sign generation are separate technical tasks and that unrestricted sign-language translation remains challenging.
 
 ## 3. Project Objectives
 
-The primary objectives are:
-
-1. Develop a system that accepts text, voice, and sign-language inputs.
+1. Develop an accessible application that accepts text, voice, and supported ISL video/camera input.
 2. Convert supported voice input into text using speech recognition.
-3. Investigate sign-language recognition using suitable datasets and computer vision or deep learning techniques.
-4. Process inputs into a common representation suitable for generating the required outputs.
-5. Generate text responses and speech outputs from supported inputs.
-6. Compare suitable models and processing approaches using measurable evaluation metrics.
-7. Design a modular architecture that supports future improvements and additional modalities.
-8. Establish a reproducible experimental workflow suitable for research and future major-project development.
+3. Investigate ISL sign recognition using suitable datasets and computer-vision or deep-learning techniques.
+4. Convert supported inputs into a common text-based representation.
+5. Generate speech from supported text using text-to-speech.
+6. Provide avatar-based sign presentation for supported content, using appropriate sign assets, mappings, or a future generation component.
+7. Provide structured ISL lessons and camera-based practice with model-assisted feedback.
+8. Compare suitable models and processing approaches using measurable evaluation metrics.
+9. Maintain a modular architecture that separates the user interface, API, inference pipeline, output generation, and learning functionality.
+10. Establish a reproducible experimental workflow suitable for research and future major-project development.
 
 ## 4. Target Users
 
-* Sign-language users who need to communicate with non-signers.
-* People who do not understand sign language but need to communicate with sign-language users.
-* Students and researchers investigating multimodal AI and accessible communication.
-* Users who prefer text or speech as their primary communication method.
+- ISL users who need to communicate with people who do not know ISL.
+- People who do not understand ISL but need to communicate with ISL users.
+- Learners who want to study ISL vocabulary and practise signs.
+- Students and researchers investigating multimodal AI and accessible communication.
+- Users who prefer text or speech as their primary communication method.
 
-The system is intended to support communication, not replace professional interpreters in situations where accurate interpretation is critical.
+SignAdapt is intended to support communication and learning. It is not a replacement for qualified interpreters in high-stakes, legal, medical, or other situations where interpretation errors may have serious consequences.
 
 ## 5. Scope
 
-### 5.1 Initial Version — In Scope
+### 5.1 Initial Product Scope
 
-**Input modalities**
+#### Input modalities
 
-* Text input through a user interface.
-* Voice input through a microphone or supported audio recording.
-* Sign-language input through a camera or supported video input.
+- Text entered through the application.
+- Voice captured through a microphone or a supported audio file.
+- ISL input captured through a camera or uploaded as a supported video.
 
-**Output modalities**
+#### Communication outputs
 
-* Text output displayed in the application.
-* Speech output generated from the resulting text.
+- Readable text output.
+- Speech output generated from supported text.
+- Avatar-based sign presentation for supported phrases or vocabulary, subject to available and validated sign resources.
 
-**Core capabilities**
+#### Core communication capabilities
 
-* Input validation and preprocessing.
-* Speech-to-text processing.
-* Sign-language recognition for the supported vocabulary or classes.
-* Conversion of supported inputs into a common text-based representation.
-* Text-to-speech generation.
-* Clear indication of unsupported inputs or uncertain predictions.
-* Evaluation of individual models and the overall communication pipeline.
+- Input validation and preprocessing.
+- Speech-to-text processing.
+- ISL recognition for the supported dataset, vocabulary, or classes.
+- Conversion of supported input into a text-based representation.
+- Text-to-speech generation and playback.
+- Clear indications of uncertainty, unsupported signs, unavailable resources, and processing failures.
+- Evaluation of individual models and the end-to-end communication pipeline.
 
-### 5.2 Future Scope — Out of Scope for the Initial Version
+#### Interactive learning capabilities
 
-* Generating sign-language output through animated avatars or video.
-* Comprehensive translation of unrestricted sign-language conversations.
-* Real-time recognition of every sign, expression, and grammatical structure.
-* Support for every sign language without additional datasets and training.
-* Production deployment for high-stakes communication without further validation.
+- ISL lessons organized by level or topic.
+- Sign demonstration for available lesson content.
+- Camera-based practice for supported signs.
+- Comparison of a practice attempt with a reference sign using an appropriate recognition method.
+- User-facing feedback such as matched, partially matched, retry, or unable to recognize.
+- Progress indicators where progress is actually stored and calculated.
 
-These features may be introduced after the initial system has been evaluated.
+Feedback must be presented as model-assisted guidance, not as a guaranteed or authoritative assessment of sign-language correctness.
+
+#### Authentication and user experience
+
+- Login and signup screens.
+- Account access and logout.
+- Profile and preferences screens.
+- Optional guest or unauthenticated access to public/demo features, if enabled by the implementation.
+- Auth0 is the current candidate for managed authentication; final configuration and integration details belong in the architecture and implementation documentation.
+- Protected API operations must verify authentication tokens on the backend. Hiding a UI element is not sufficient security.
+
+### 5.2 Research and Implementation Boundaries
+
+The initial implementation should prioritize a reliable, testable pipeline for the selected ISL dataset and supported vocabulary. Features may be represented in the UI before their underlying model or content assets are complete, but the UI must not present mock behaviour as a functioning capability.
+
+Sign recognition, text-to-speech, and avatar-based sign presentation are distinct components. Avatar output requires a validated mapping or generation method and suitable sign-language assets; converting English word-by-word into signs must not be treated as automatically grammatically correct ISL.
+
+### 5.3 Future Scope
+
+- Expanded continuous ISL sentence recognition and translation beyond the supported dataset.
+- More comprehensive representation of facial expressions, spatial grammar, and other linguistic information where relevant data and methods are available.
+- ASL and other sign languages after language-specific dataset preparation, model adaptation, and evaluation.
+- More advanced avatar animation or generated sign video.
+- Personalization and user-specific adaptation.
+- Improved real-time performance and broader deployment.
+- Extensive evaluation with diverse users and real-world communication scenarios.
 
 ## 6. Functional Requirements
 
 ### FR-01: Text Input
 
-The application shall allow users to enter text through a text field.
-
-The system shall validate the input and make it available to the communication-processing pipeline.
+The application shall allow users to enter text through a text field. It shall validate the input and make it available to the communication pipeline.
 
 ### FR-02: Voice Input
 
-The application shall accept voice input through a microphone or supported audio file.
+The application shall accept voice input through a microphone or supported audio file. It shall pass the audio through an appropriate speech-recognition component and display the resulting transcription when processing succeeds.
 
-The system shall process the audio using a speech-recognition component and produce a text transcription.
+### FR-03: ISL Input
 
-### FR-03: Sign-Language Input
+The application shall accept ISL input through a supported camera or video source. It shall validate the input, preprocess it as required, and pass it to a trained recognition model.
 
-The application shall accept sign-language input through a supported camera or video source.
+The model shall return supported labels or text according to the selected dataset and its demonstrated capabilities. Unsupported or uncertain predictions shall be communicated clearly.
 
-The system shall preprocess the input and pass it to a trained recognition model.
+### FR-04: Common Text Representation
 
-The model shall identify supported signs or sequences according to the selected dataset and model capabilities.
-
-### FR-04: Input Processing
-
-The system shall process each supported input modality through its appropriate pipeline.
-
-The initial version may use separate models or processing components for different modalities rather than requiring one unified neural network.
+The system shall use text as a common representation for supported communication workflows where appropriate. Separate processing components may be used for each modality; a single unified neural network is not required.
 
 ### FR-05: Text Output
 
-The system shall display the resulting text in a readable interface.
-
-The displayed output shall indicate when the system cannot confidently interpret an input, where confidence estimation is available.
+The application shall display the resulting or recognized text in a readable interface. Where confidence estimation is available and meaningful, the interface may indicate uncertainty without implying that confidence equals correctness.
 
 ### FR-06: Speech Output
 
-The system shall provide speech output by converting supported text into audio using a text-to-speech component.
+The system shall convert supported text to speech using a text-to-speech component and provide playback controls. The selected TTS implementation and supported languages shall be documented.
 
-Users shall be able to play the generated audio.
+### FR-07: Avatar-Based Sign Presentation
 
-### FR-07: Error Handling
+The application shall provide an avatar presentation area for supported signs or phrases. It shall support appropriate playback controls, such as play, pause, replay, and stop, when the chosen animation technology supports them.
 
-The system shall handle empty input, unsupported file formats, unavailable microphone or camera access, and model-processing failures without crashing the application.
+The system shall show a clear unavailable-sign state when no validated sign resource or generation path exists for the requested content. The application shall not imply that arbitrary text can always be translated into fluent ISL.
 
-### FR-08: Future Sign Output
+### FR-08: Sign Learning
 
-The architecture should allow sign-language generation to be added later without requiring a complete redesign of the existing application.
+The application shall display available lessons with appropriate titles, topics, levels, and instructions. Lesson content must be grounded in verified learning materials rather than invented linguistic claims.
+
+### FR-09: Practice and Feedback
+
+The application shall support camera-based practice for selected signs when the relevant recognition capability is available. It shall provide appropriate states for matched attempts, partial matches, retry requests, unrecognized attempts, and camera/processing errors.
+
+Any score or confidence value shown in the interface must come from an actual defined calculation or be explicitly marked as illustrative sample data.
+
+### FR-10: User Account and Preferences
+
+The application shall provide the designed login, signup, logout, profile, and settings flows. If Auth0 is adopted, the frontend shall use the supported Auth0 flow and the backend shall verify access tokens before serving protected resources.
+
+### FR-11: Error Handling
+
+The system shall handle empty input, unsupported file formats, unavailable camera or microphone access, network failures, missing sign assets, and model-processing failures without crashing the application. Messages should explain the issue and, where possible, how to recover.
+
+### FR-12: Extensibility
+
+The architecture shall allow additional models, datasets, sign languages, output modalities, and learning content to be introduced without requiring a complete redesign.
 
 ## 7. Non-Functional Requirements
 
-### NFR-01: Usability
+### NFR-01: Usability and Accessibility
 
-The interface shall be simple, accessible, and understandable to users with different levels of technical experience.
+The interface shall be simple, readable, and understandable for users with different levels of technical experience. Controls must have clear labels, keyboard focus states, adequate contrast, and understandable error messages.
 
 ### NFR-02: Modularity
 
-Input processing, model inference, output generation, and interface components shall be separated wherever practical.
+Input processing, model inference, output generation, authentication, learning functionality, and UI components shall be separated wherever practical.
 
 ### NFR-03: Performance
 
-The system shall aim to provide practical response times for supported inputs. Actual latency shall be measured during experimentation rather than assumed in advance.
+The system shall aim for practical response times for supported inputs. Latency targets shall be established after baseline measurement rather than assumed.
 
 ### NFR-04: Reliability
 
-The application shall handle invalid inputs and processing failures gracefully.
+The application shall handle invalid inputs and component failures gracefully and provide actionable error states.
 
-### NFR-05: Maintainability
+### NFR-05: Maintainability and Reproducibility
 
-The codebase shall use clear module boundaries, documented interfaces, and reproducible configuration.
+The codebase shall use clear module boundaries, documented interfaces, reproducible configuration, and recorded model/data versions.
 
-### NFR-06: Privacy
+### NFR-06: Privacy and Security
 
-Audio and video inputs shall be handled with appropriate care. Data shall not be retained or transmitted unnecessarily, and any external processing must be disclosed to users.
+Audio and video inputs shall be handled carefully. Data shall not be retained or transmitted unnecessarily. External processing and data retention must be disclosed. Secrets must not be committed to source control. Protected backend endpoints must enforce authentication and authorization server-side.
 
 ### NFR-07: Extensibility
 
-The architecture shall support future models, additional datasets, languages, and output modalities.
+The architecture shall support future models, datasets, sign languages, and output modalities without coupling them tightly to the frontend.
 
-## 8. Proposed System Workflow
+### NFR-08: Honest Feedback
 
-### Text Input
+The interface shall distinguish actual model output from sample data, unsupported functionality, and uncertain predictions. It shall not claim that a model or avatar feature works until that behaviour is implemented and tested.
 
-User enters text → Input validation → Text processing → Text output → Optional speech generation.
+## 8. Proposed System Workflows
 
-### Voice Input
+### Text input
 
-User provides audio → Audio preprocessing → Speech recognition → Transcribed text → Text display → Optional speech output.
+User enters text → input validation → text processing → text display → optional speech generation and supported avatar sign presentation.
 
-### Sign-Language Input
+### Voice input
 
-User provides a video or camera input → Frame extraction and preprocessing → Sign recognition model → Recognized text → Text display → Optional speech output.
+User provides audio → audio validation/preprocessing → speech recognition → transcript display/editing → optional speech playback and supported avatar sign presentation.
 
-The exact sign-recognition pipeline will depend on the selected dataset, annotation format, and model architecture.
+### ISL input
+
+User provides a video or camera stream → frame/sequence preprocessing → ISL recognition model → recognized supported text/label → text display → optional speech output.
+
+### Interactive learning
+
+User selects a lesson → reviews a reference sign and instructions → starts camera practice → supported recognition/evaluation component processes the attempt → feedback is displayed → user retries or continues.
+
+The exact ISL recognition pipeline depends on the chosen dataset, annotation format, and model architecture. Avatar generation/presentation is a separate pipeline and must use appropriate sign resources or a validated generation approach.
 
 ## 9. Research and Evaluation Requirements
 
-SignAdapt is intended to be evaluated as an AI/ML research project rather than only as a software application.
+SignAdapt is intended to be evaluated as an AI/ML research project, not only as a software application.
 
-The evaluation should include:
+Evaluation should include, where applicable:
 
-* Comparison of suitable sign-recognition approaches.
-* Evaluation of speech-recognition quality.
-* Measurement of sign-recognition accuracy on an appropriate held-out test set.
-* Analysis of inference latency and computational requirements.
-* Testing across supported input modalities.
-* Analysis of failure cases, ambiguous inputs, and unsupported signs.
-* Comparison of baseline and improved approaches where feasible.
+- Comparison of suitable ISL recognition approaches.
+- Evaluation of speech-recognition quality.
+- ISL recognition performance on a defined held-out test set.
+- Inference latency and computational requirements.
+- Performance across supported input modalities.
+- Analysis of failure cases, ambiguous inputs, and unsupported signs.
+- Baseline-versus-improved model comparisons where feasible.
+- Evaluation of avatar sign coverage and correctness for the supported vocabulary.
+- Testing of learning feedback behaviour against a defined protocol.
 
-### Potential Metrics
+### Potential metrics
 
 **Sign recognition**
-
-* Accuracy.
-* Precision, recall, and F1-score.
-* Confusion matrix.
-* Word Error Rate, where sequence-level transcription makes it appropriate.
+- Accuracy.
+- Precision, recall, and F1-score.
+- Confusion matrix.
+- Word Error Rate for appropriate sequence-level tasks.
 
 **Speech recognition**
-
-* Word Error Rate.
-* Character Error Rate, where appropriate.
+- Word Error Rate.
+- Character Error Rate where appropriate.
 
 **System performance**
+- End-to-end latency.
+- Processing time per sample or sequence.
+- Resource consumption.
+- Success rate on defined test scenarios.
 
-* End-to-end latency.
-* Processing time per sample or sequence.
-* Resource consumption.
-* Success rate on defined test scenarios.
+**Learning and avatar features**
+- Coverage of supported signs/phrases.
+- Correctness of mapped or generated sign sequences, assessed using an appropriate protocol.
+- Feedback agreement with reference labels or a defined evaluation method.
+- Usability or learning outcomes only if a suitable user study is conducted.
 
-Metrics shall be selected according to the task, dataset, and output format. Results must be obtained experimentally and must not be fabricated.
+Metrics must be selected according to the task, dataset, and output format. Results must be obtained experimentally and must not be fabricated. A UI demonstration alone is not evidence of model accuracy or learning effectiveness.
 
-## 10. Dataset Requirements
+## 10. Dataset and Content Requirements
 
-The project shall use datasets that are appropriate for the selected sign language and recognition task.
+Datasets and sign-learning resources must be reviewed for:
 
-Before training, the selected dataset must be reviewed for:
+- Sign-language coverage and vocabulary.
+- Annotation format and label quality.
+- Dataset size and class distribution.
+- Subject diversity and recording conditions.
+- Licensing and permitted use.
+- Availability and reliability of predefined splits.
+- Suitability for the intended recognition or evaluation task.
 
-* Sign-language coverage and vocabulary.
-* Annotation format and label quality.
-* Dataset size and class distribution.
-* Subject diversity and recording conditions.
-* Licensing and permitted usage.
-* Availability of predefined training, validation, and test splits.
+Where appropriate, use subject-independent evaluation to reduce leakage between training and test data. Preserve original data separately from processed data. Document preprocessing, dataset versions, splits, and licensing.
 
-Where appropriate, the project shall preserve subject-independent evaluation to reduce the risk of overly optimistic results caused by data leakage.
+ISL is the initial target language. ASL or other languages require their own suitable resources and evaluation; they must not be presented as supported merely because the application has a language selector.
 
-The original dataset shall be preserved separately from processed data. Preprocessing steps, dataset versions, and experimental splits shall be documented.
-
-The exact datasets and their suitability will be finalized during the research-planning phase.
+Lesson text, reference signs, and avatar assets should be sourced or reviewed responsibly. Do not invent sign-language meanings or assume a direct word-for-word mapping between spoken English and ISL.
 
 ## 11. Technical Design Principles
-
-The implementation shall follow these principles:
 
 1. Use a modular architecture with clearly separated responsibilities.
 2. Keep model inference separate from interface code.
 3. Avoid unnecessary coupling between input and output modalities.
-4. Use reproducible preprocessing and evaluation pipelines.
-5. Record model configurations and experiment results.
-6. Validate predictions against appropriate test data.
-7. Avoid presenting uncertain model predictions as guaranteed translations.
-8. Keep the initial implementation focused on text and speech outputs while preserving a path toward future sign output.
+4. Treat sign recognition and sign generation/presentation as separate tasks.
+5. Use reproducible preprocessing and evaluation pipelines.
+6. Record model configurations and experiment results.
+7. Validate predictions against appropriate test data.
+8. Avoid presenting uncertain predictions as guaranteed translations.
+9. Enforce authorization on the backend for protected resources.
+10. Keep configuration and secrets outside committed source code.
+11. Maintain the existing cloned repository and its Git history; do not initialize a replacement repository as part of implementation.
 
-The final technology stack and model architectures shall be documented in the technical architecture document.
+The detailed technology stack, module boundaries, and API contracts shall be documented in `architecture.md`.
 
 ## 12. Success Criteria
 
 The initial version will be considered successful when:
 
-* All three planned input modalities have implemented and testable processing paths, within the defined dataset and model scope.
-* Text input produces the expected text output.
-* Voice input can be transcribed into text and used in the output pipeline.
-* Supported sign-language inputs can be processed by the trained recognition component.
-* Text-to-speech functionality works for supported text.
-* The application handles invalid or unsupported inputs gracefully.
-* Evaluation metrics are reported using a clearly defined test procedure.
-* The project can be reproduced using documented setup and execution instructions.
-* Limitations and future improvements are documented.
+- Text input follows the defined processing path and displays the expected output.
+- Voice input can be transcribed into text for the supported configuration.
+- Supported ISL inputs can be processed by a trained or appropriately configured recognition component.
+- Text-to-speech works for supported text.
+- Avatar-based sign presentation works for the explicitly supported vocabulary or phrases, or unavailable content is clearly identified.
+- Available learning lessons can be viewed and followed.
+- Practice feedback is generated by a defined and testable mechanism for the supported signs.
+- Authentication and protected resources, if enabled, are enforced correctly by the backend.
+- The application handles invalid or unsupported inputs gracefully.
+- Evaluation metrics are reported using a clearly defined test procedure.
+- Setup and execution can be reproduced from documented instructions.
+- Limitations, dataset provenance, and future improvements are documented.
 
-Numerical performance targets shall be established after reviewing the dataset and measuring a baseline.
+Numerical performance targets shall be established after dataset selection and baseline measurement. Features that are only represented in mockups do not count as completed success criteria.
 
 ## 13. Risks and Limitations
 
 Potential risks include:
 
-* Limited availability of suitable sign-language datasets.
-* Poor generalization to unseen users or recording conditions.
-* Confusion between visually similar signs.
-* Loss of meaning when converting continuous sign sequences into text.
-* Speech-recognition errors caused by noise or accents.
-* Computational constraints during training and inference.
-* Dataset bias and insufficient class representation.
-* Difficulty evaluating end-to-end communication quality.
+- Limited availability of suitable ISL datasets and licensed sign assets.
+- Poor generalization to unseen users or recording conditions.
+- Confusion between visually similar signs.
+- Loss of meaning when continuous sign sequences are converted to text.
+- Speech-recognition errors caused by noise or accents.
+- Difficulty representing facial expressions, spatial information, and ISL grammar.
+- Incorrect or unnatural avatar output when using simplistic word-to-sign mappings.
+- Misleading feedback if the learning model has not been validated.
+- Computational constraints during training and inference.
+- Dataset bias and insufficient class representation.
+- Privacy concerns around camera, audio, and video.
+- Difficulty evaluating end-to-end communication quality.
 
-These risks shall be documented and addressed through appropriate experiments and design decisions.
+These risks shall be documented and addressed through appropriate experiments, interface messaging, and design decisions.
 
 ## 14. Deliverables
 
-The planned deliverables are:
+Planned deliverables include:
 
-1. Working application supporting the defined input and output modalities.
+1. Working application supporting the implemented and defined input/output modalities.
 2. Documented software architecture.
 3. Dataset preparation and preprocessing pipeline.
 4. Trained or appropriately configured recognition components.
 5. Evaluation scripts and experimental results.
-6. Source code and setup instructions.
-7. Research documentation covering methodology, limitations, and findings.
-8. A roadmap for future sign-language output generation.
+6. Text-to-speech integration.
+7. Avatar-based sign presentation for a defined supported scope, with documented limitations.
+8. ISL learning and practice interface with testable feedback behaviour.
+9. Authentication integration and security configuration, if adopted.
+10. Source code and setup instructions.
+11. Research documentation covering methodology, results, limitations, and findings.
+12. A roadmap for expanded vocabulary, continuous sign translation, and additional sign languages.
 
 ## 15. Future Enhancements
 
-Potential future improvements include:
+Potential improvements include:
 
-* Sign-language output through animated avatars or generated video.
-* Expanded vocabulary and continuous sign-sequence recognition.
-* Improved handling of facial expressions and spatial information where relevant.
-* Support for additional sign languages.
-* Better real-time performance.
-* User-specific adaptation and personalization.
-* More comprehensive evaluation with diverse users and recording environments.
+- Expanded continuous ISL sentence recognition and translation.
+- Improved representation of facial expressions and spatial grammar.
+- ASL and other sign languages after suitable data preparation, adaptation, and evaluation.
+- More natural avatar animation or validated generated sign video.
+- Personalization and user-specific adaptation.
+- Better real-time performance.
+- Evaluation with diverse users and real-world recording environments.
+- Expanded lesson libraries and learning-progress analytics.
 
-Each enhancement shall be prioritized according to feasibility, available data, research value, and evaluation requirements.
+Each enhancement shall be prioritized according to feasibility, available data, research value, safety, and evaluation requirements.
 
 ## 16. Document Maintenance
 
-This PRD defines the intended product scope and requirements.
+This PRD defines the intended product scope and requirements. Implementation details, component interactions, API contracts, and technology choices shall be maintained in `architecture.md`. Research questions, hypotheses, datasets, and evaluation protocols shall be maintained in the research and experiment plan. Development tasks, completed features, known bugs, and current progress shall be maintained in the implementation/task plan.
 
-Implementation details, component interactions, and technology choices shall be maintained in the architecture document.
-
-Research questions, hypotheses, datasets, and evaluation protocols shall be maintained in the research and experiment plan.
-
-Development tasks, completed features, known bugs, and current progress shall be maintained in the implementation and task plan.
-
-Changes to the project scope shall be reflected in this document to keep the development process consistent.
+Changes to scope shall be reflected in this document and the architecture document so that implementation and research remain aligned.
 
 ---
 
