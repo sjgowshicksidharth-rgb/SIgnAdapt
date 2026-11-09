@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom background styles from welcome-login screen */
+.bg-auth-gradient {
+  background: linear-gradient(135deg, #EEF2FF 0%, #F5F7FF 50%, #EDE9FE 100%);
+}
+
+.wave-bg {
+  background: radial-gradient(circle at 10% 90%, rgba(129, 140, 248, 0.25) 0%, transparent 60%),
+              radial-gradient(circle at 45% 85%, rgba(192, 132, 252, 0.2) 0%, transparent 55%),
+              radial-gradient(circle at 85% 10%, rgba(224, 231, 255, 0.4) 0%, transparent 50%);
+}
+
