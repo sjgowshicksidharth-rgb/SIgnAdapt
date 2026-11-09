@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-container":"#dad7ff","primary-fixed":"#e3dfff","secondary-container":"#8f8bff","error":"#ba1a1a","surface-dim":"#d6d7fd","secondary":"#544fc0","on-tertiary-fixed":"#350f00","on-primary-fixed-variant":"#3621cc","surface-container-low":"#f4f2ff","on-tertiary-container":"#ffd1bf","surface-container-highest":"#dfe0ff","inverse-primary":"#c4c0ff","on-secondary-container":"#231791","surface-bright":"#fbf8ff","on-primary":"#ffffff","primary-container":"#5145e5","on-secondary-fixed-variant":"#3b35a7","tertiary-fixed-dim":"#ffb595","surface-tint":"#4f43e3","surface-container":"#edecff","surface-container-lowest":"#ffffff","on-tertiary-fixed-variant":"#7c2e00","primary-fixed-dim":"#c4c0ff","on-error":"#ffffff","surface-variant":"#dfe0ff","on-surface":"#161935","tertiary-container":"#a54000","tertiary-fixed":"#ffdbcd","inverse-surface":"#2b2e4b","on-secondary-fixed":"#0f0069","surface-container-high":"#e6e6ff","background":"#fbf8ff","secondary-fixed-dim":"#c3c0ff","on-secondary":"#ffffff","on-primary-fixed":"#100069","primary":"#3724cd","on-tertiary":"#ffffff","error-container":"#ffdad6","tertiary":"#7e2f00","inverse-on-surface":"#f1efff","outline":"#777587","on-background":"#161935","surface":"#fbf8ff","on-error-container":"#93000a","outline-variant":"#c7c4d8","on-surface-variant":"#464555","secondary-fixed":"#e2dfff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2rem","space-xs":"0.25rem","space-md":"1rem","margin":"1.25rem","gutter":"1.25rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","margin-desktop":"2rem","space-lg":"1.5rem"},fontFamily:{"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"display":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"]},fontSize:{"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],"headline-md":["20px",{lineHeight:"28px",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"display":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}],"body-lg":["15px",{lineHeight:"22px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",fontWeight:"500"}],"headline-lg-mobile":["22px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"700"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-screen w-64 bg-[#171a36] z-50 flex flex-col justify-between p-space-lg select-none"><div class="flex flex-col gap-space-xl"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[22px]">sign_language</span></div><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight font-bold">SignAdapt</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-headline-sm"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#8f9cae] hover:bg-white/5 hover:text-on-primary transition-colors font-headline-sm text-headline-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="">Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary transition-colors font-headline-sm text-headline-sm shadow-sm" data-path="translation" href="#"><span class="material-symbols-outlined text-[20px]">translate</span><span class="">Translation</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-headline-sm" data-path="sign-learning" href="#"><span class="material-symbols-outlined text-[20px]">school</span><span class="">Sign Learning</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#8f9cae] hover:bg-white/5 hover:text-on-primary transition-colors font-headline-sm text-headline-sm" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span class="">Profile</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#8f9cae] hover:bg-white/5 hover:text-on-primary transition-colors font-headline-sm text-headline-sm" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="">Settings</span></a></nav></div><div class="pt-space-md"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-[#8f9cae] hover:bg-white/5 hover:text-on-primary transition-colors font-headline-sm text-headline-sm" data-path="login" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span class="">Logout</span></a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-md z-40 flex items-center justify-end px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full min-h-screen pt-16 bg-surface px-gutter-desktop pb-space-xl"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg w-full max-w-[1400px] mx-auto py-space-sm">
+<!-- Title Area (Contextual for Screen E: Practice Mode) -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md border-b border-surface-container-high pb-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Practice Mode</h1>
+<span id="status-live-badge" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" id="status-badge-dot"></span>
+<span id="status-badge-text" class="">Live ISL Detection</span>
+</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Show the sign and get instant feedback</p>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-low p-1.5 rounded-full border border-surface-variant overflow-x-auto select-none" id="state-selector-tabs">
+<button type="button" onclick="switchPracticeState('correct')" id="tab-correct" class="state-tab px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold transition-all duration-200 bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="">Correct (Success)</span>
+</button>
+<button type="button" onclick="switchPracticeState('partial')" id="tab-partial" class="state-tab px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-surface-container shrink-0 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span class="">Partial Match (62%)</span>
+</button>
+<button type="button" onclick="switchPracticeState('try_again')" id="tab-try_again" class="state-tab px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-surface-container shrink-0 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">replay</span>
+<span class="">Try Again</span>
+</button>
+<button type="button" onclick="switchPracticeState('error')" id="tab-error" class="state-tab px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-surface-container shrink-0 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">videocam_off</span>
+<span class="">Camera Error</span>
+</button>
+</div>
+</div>
+<!-- Main Practice Grid / Three-Card Horizontal Flow -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-stretch w-full" id="practice-main-grid">
+<!-- Card 1: Camera Preview with HUD Reticles -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-xl border border-surface-container-high/60 shadow-sm p-space-md flex flex-col justify-between relative overflow-hidden group">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#0d0f22] flex items-center justify-center" id="camera-feed-container">
+<!-- Camera Stream Image -->
+<img class="w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.01]" data-alt="A front-facing medium close-up shot of a young Indian woman practicing Indian Sign Language gestures against a clean minimalist studio backdrop with soft lavender and white ambient lighting." id="camera-preview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFjR4yevLvklQahRAup2BVpDnKTD9UnbXzulVqE5VyVTY2H6_uEI4_1rleOEA0q1XDmSUCDTjXGZJsxwJJeqoXn4qHKbHT_X6-Zrh1CbbxNUvUUT84xyKqoCOZQyJsnjyjjs-1F8KvAjfQtXCmqlWqB9BOami_VB-MU8H0uexFO3ijiS2Y-8lSDsuMtNtsJp80nL6bjx5SdRyz7WIimpxHiRqQobYP7LbVUG9rDBU">
+<!-- Normal & Warning HUD Framing Brackets -->
+<div class="absolute inset-5 pointer-events-none flex flex-col justify-between transition-all duration-300" id="hud-brackets-overlay">
+<div class="flex justify-between items-start w-full">
+<svg class="w-10 h-10 text-emerald-500 drop-shadow-sm transition-colors duration-300" fill="none" id="hud-bracket-tl" viewBox="0 0 40 40"><path d="M4 36 V6 C4 4.89543 4.89543 4 6 4 H36" stroke="currentColor" stroke-linecap="round" stroke-width="4.5"></path></svg>
+<svg class="w-10 h-10 text-emerald-500 drop-shadow-sm transition-colors duration-300" fill="none" id="hud-bracket-tr" viewBox="0 0 40 40"><path d="M36 36 V6 C36 4.89543 35.1046 4 34 4 H4" stroke="currentColor" stroke-linecap="round" stroke-width="4.5"></path></svg>
+</div>
+<div class="self-center flex flex-col items-center gap-1" id="hud-center-pill">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#171a36]/75 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm shadow-md" id="hud-status-badge">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" id="hud-status-dot"></span>
+<span id="hud-status-text" class="">Pose Tracking: Active</span>
+</span>
+</div>
+<div class="flex justify-between items-end w-full">
+<svg class="w-10 h-10 text-emerald-500 drop-shadow-sm transition-colors duration-300" fill="none" id="hud-bracket-bl" viewBox="0 0 40 40"><path d="M4 4 V34 C4 35.1046 4.89543 36 6 36 H36" stroke="currentColor" stroke-linecap="round" stroke-width="4.5"></path></svg>
+<svg class="w-10 h-10 text-emerald-500 drop-shadow-sm transition-colors duration-300" fill="none" id="hud-bracket-br" viewBox="0 0 40 40"><path d="M36 4 V34 C36 35.1046 35.1046 36 34 36 H4" stroke="currentColor" stroke-linecap="round" stroke-width="4.5"></path></svg>
+</div>
+</div>
+<!-- Camera Error Disconnected Screen (Initially hidden) -->
+<div class="absolute inset-0 bg-[#161935]/95 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-20 hidden" id="camera-error-screen">
+<div class="w-16 h-16 rounded-full bg-error-container text-error flex items-center justify-center mb-space-md shadow-md animate-pulse">
+<span class="material-symbols-outlined text-[32px]">videocam_off</span>
+</div>
+<h4 class="font-headline-md text-headline-md font-bold text-surface-container-lowest mb-1">Camera Feed Disconnected</h4>
+<p class="font-body-sm text-body-sm text-[#8f9cae] max-w-sm mb-space-md">Unable to acquire live video stream. Check device camera permissions or verify physical connection.</p>
+<button type="button" onclick="switchPracticeState('correct')" class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm font-semibold shadow-sm transition-all">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span class="">Reconnect Camera</span>
+</button>
+</div>
+<!-- Bottom Camera Bar Overlay -->
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between px-3 py-2 rounded-lg bg-[#171a36]/75 backdrop-blur-md text-surface-container-lowest z-10">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" id="bottom-stream-dot"></span>
+<span class="font-label-sm text-label-sm font-medium tracking-wide" id="bottom-stream-label">FHD 60FPS</span>
+</div>
+<div class="flex items-center gap-3">
+<button type="button" class="text-surface-container-lowest/80 hover:text-surface-container-lowest transition-colors flex items-center" title="Calibrate Frame"><span class="material-symbols-outlined text-[18px]">fit_screen</span></button>
+<button type="button" class="text-surface-container-lowest/80 hover:text-surface-container-lowest transition-colors flex items-center" title="Switch Camera"><span class="material-symbols-outlined text-[18px]">flip_camera_ios</span></button>
+</div>
+</div>
+</div>
+<!-- Camera Status Footnote -->
+<div class="flex items-center justify-between mt-space-md pt-space-xs text-on-surface-variant font-body-sm text-body-sm" id="camera-status-footnote">
+<div class="flex items-center gap-1.5" id="footnote-landmark-info">
+<span class="material-symbols-outlined text-[16px] text-emerald-600" id="footnote-icon">verified</span>
+<span id="footnote-text" class="">Hand Landmarks (21 points) Calibrated</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline" id="footnote-dict">ISL DICTIONARY V2.4</span>
+</div>
+</div>
+<!-- Card 2: Feedback & Next Sign (Col span: 3) -->
+<div class="lg:col-span-3 flex flex-col gap-space-lg">
+<!-- Feedback Box -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-high/60 shadow-sm p-space-lg flex-1 flex flex-col items-center justify-center text-center relative overflow-hidden transition-all duration-300 hover:shadow-md" id="feedback-card">
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-emerald-50 rounded-full blur-2xl pointer-events-none transition-all duration-300" id="feedback-glow"></div>
+<!-- Feedback Status Icon -->
+<div class="w-16 h-16 rounded-full bg-emerald-500 text-surface-container-lowest flex items-center justify-center shadow-md shadow-emerald-500/20 mb-space-md transition-all duration-300" id="feedback-icon-box">
+<span class="material-symbols-outlined text-[36px]" id="feedback-icon-symbol" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<!-- Status Headline & Subtitles -->
+<h2 class="font-headline-lg text-headline-lg font-bold text-emerald-500 tracking-tight mb-1 transition-colors duration-300" id="feedback-title">Correct!</h2>
+<p class="font-body-md text-body-md text-on-surface font-semibold transition-colors duration-300" id="feedback-sub1">Great job!</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant transition-colors duration-300" id="feedback-sub2">Keep it up!</p>
+<div class="mt-space-md w-full hidden" id="feedback-action-container">
+<button type="button" id="feedback-action-btn" class="w-full py-2 px-3 rounded-lg text-on-primary font-label-sm text-label-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5">Adjust &amp; Re-check</button>
+</div>
+</div>
+<!-- Next Sign Interactive Tile -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-container-high/60 shadow-sm p-space-md flex items-center justify-between hover:shadow-md transition-all duration-200 cursor-pointer group" id="next-sign-card">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Next Sign</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface truncate group-hover:text-primary transition-colors" id="next-sign-label">Thank You</span>
+</div>
+<button aria-label="Proceed to Next Sign" class="w-11 h-11 shrink-0 rounded-full bg-primary-container text-on-primary flex items-center justify-center transition-all duration-200 group-hover:bg-primary group-hover:scale-105 active:scale-95 shadow-sm shadow-primary/20" id="next-sign-btn">
+<span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Performance Circular Metric (Col span: 3) -->
+<div class="lg:col-span-3 bg-surface-container-lowest rounded-xl border border-surface-container-high/60 shadow-sm p-space-lg flex flex-col justify-between items-center text-center transition-all duration-300 hover:shadow-md" id="performance-card">
+<div class="w-full flex items-center justify-between pb-space-sm">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Performance</h3>
+<span class="material-symbols-outlined text-outline-variant hover:text-on-surface transition-colors cursor-pointer text-[20px]" title="Metric Information">info</span>
+</div>
+<!-- Radial Gauge -->
+<div class="relative w-44 h-44 flex items-center justify-center my-space-md">
+<svg class="w-full h-full transform -rotate-90" viewBox="0 0 160 160">
+<circle class="text-surface-container" cx="80" cy="80" fill="transparent" r="64" stroke="currentColor" stroke-width="14"></circle>
+<circle class="text-emerald-500 transition-all duration-700 ease-out" cx="80" cy="80" fill="transparent" id="progress-ring" r="64" stroke="currentColor" stroke-dasharray="402.12" stroke-dashoffset="60.32" stroke-linecap="round" stroke-width="14"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display text-display text-on-surface font-extrabold tracking-tight" id="accuracy-counter">85%</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-1 pb-space-xs">
+<span class="font-body-md text-body-md font-semibold text-on-surface-variant" id="perf-metric-name">Accuracy</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm font-semibold transition-colors duration-300" id="perf-trend-wrapper">
+<span class="material-symbols-outlined text-[14px]" id="perf-trend-icon">trending_up</span>
+<span id="perf-trend-text" class="">+4% vs last practice</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Practice Toolbar & Sign Assist Drawer (Supplemental Contextual Utility) -->
+<div class="flex flex-col gap-space-md mt-space-xs" id="telemetry-section-wrapper">
+<!-- Contextual Feedback & Landmark Breakdown Bar -->
+<div class="w-full rounded-xl bg-surface-container-low border border-surface-container-high px-space-md py-space-sm flex flex-col md:flex-row items-center justify-between gap-space-sm transition-all duration-300" id="contextual-tip-bar">
+<div class="flex items-center gap-space-sm text-on-surface-variant text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" id="tip-icon">lightbulb</span>
+<span class="font-medium text-on-surface" id="tip-headline">Pose Diagnostic:</span>
+<span id="tip-content" class="">All 21 hand landmarks tracking accurately in bounding zone. Maintain current camera distance.</span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0" id="tip-metrics-pill">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold" id="tip-pill-1">Finger Spacing: 96%</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold" id="tip-pill-2">Wrist Elevation: Optimal</span>
+</div>
+</div>
+<!-- Quick Practice Telemetry row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<div class="bg-surface-container-low rounded-lg p-space-md flex items-center gap-space-md border border-surface-container-high/40">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hold Gesture Duration</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface" id="stat-hold-duration">1.8s / 2.0s</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex items-center gap-space-md border border-surface-container-high/40">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">auto_fix_high</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">AI Latency</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface" id="stat-latency">42 ms (Real-time)</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex items-center gap-space-md border border-surface-container-high/40">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">repeat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Repetitions Completed</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface" id="stat-repetitions">12 of 15 Signs</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+function switchPracticeState(state) {
+  const tabs = document.querySelectorAll('.state-tab');
+  tabs.forEach(t => {
+    t.className = 'state-tab px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-surface-container shrink-0 flex items-center gap-1.5';
+  });
+  const activeTab = document.getElementById('tab-' + state);
+  if (activeTab) {
+    activeTab.className = 'state-tab px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold transition-all duration-200 bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5 shrink-0';
+  }
+
+  const camImg = document.getElementById('camera-preview');
+  const camErr = document.getElementById('camera-error-screen');
+  const hudBrackets = [document.getElementById('hud-bracket-tl'), document.getElementById('hud-bracket-tr'), document.getElementById('hud-bracket-bl'), document.getElementById('hud-bracket-br')];
+  const hudBadge = document.getElementById('hud-status-badge');
+  const hudDot = document.getElementById('hud-status-dot');
+  const hudText = document.getElementById('hud-status-text');
+  const footIcon = document.getElementById('footnote-icon');
+  const footText = document.getElementById('footnote-text');
+  const feedBottomDot = document.getElementById('bottom-stream-dot');
+  const feedBottomLabel = document.getElementById('bottom-stream-label');
+
+  const fbCard = document.getElementById('feedback-card');
+  const fbGlow = document.getElementById('feedback-glow');
+  const fbIconBox = document.getElementById('feedback-icon-box');
+  const fbIconSym = document.getElementById('feedback-icon-symbol');
+  const fbTitle = document.getElementById('feedback-title');
+  const fbSub1 = document.getElementById('feedback-sub1');
+  const fbSub2 = document.getElementById('feedback-sub2');
+  const fbActionWrap = document.getElementById('feedback-action-container');
+  const fbActionBtn = document.getElementById('feedback-action-btn');
+
+  const progRing = document.getElementById('progress-ring');
+  const accCounter = document.getElementById('accuracy-counter');
+  const perfTrendWrap = document.getElementById('perf-trend-wrapper');
+  const perfTrendIcon = document.getElementById('perf-trend-icon');
+  const perfTrendText = document.getElementById('perf-trend-text');
+  const perfMetricName = document.getElementById('perf-metric-name');
+
+  const tipBar = document.getElementById('contextual-tip-bar');
+  const tipIcon = document.getElementById('tip-icon');
+  const tipHeadline = document.getElementById('tip-headline');
+  const tipContent = document.getElementById('tip-content');
+  const tipPill1 = document.getElementById('tip-pill-1');
+  const tipPill2 = document.getElementById('tip-pill-2');
+
+  const statHold = document.getElementById('stat-hold-duration');
+  const statLat = document.getElementById('stat-latency');
+
+  const badgeLive = document.getElementById('status-live-badge');
+  const badgeDot = document.getElementById('status-badge-dot');
+  const badgeText = document.getElementById('status-badge-text');
+
+  camErr.classList.add('hidden');
+  if (camImg) camImg.style.filter = 'none';
+
+  if (state === 'correct') {
+    hudBrackets.forEach(b => { if (b) b.setAttribute('class', 'w-10 h-10 text-emerald-500 drop-shadow-sm transition-colors duration-300'); });
+    hudDot.className = 'w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse';
+    hudText.textContent = 'Pose Tracking: Active';
+    hudBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#171a36]/75 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm shadow-md';
+    footIcon.className = 'material-symbols-outlined text-[16px] text-emerald-600';
+    footIcon.textContent = 'verified';
+    footText.textContent = 'Hand Landmarks (21 points) Calibrated';
+    feedBottomDot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping';
+    feedBottomLabel.textContent = 'FHD 60FPS';
+
+    badgeDot.className = 'w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse';
+    badgeText.textContent = 'Live ISL Detection';
+    badgeLive.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm';
+
+    fbGlow.className = 'absolute -top-12 -right-12 w-32 h-32 bg-emerald-50 rounded-full blur-2xl pointer-events-none transition-all duration-300';
+    fbIconBox.className = 'w-16 h-16 rounded-full bg-emerald-500 text-surface-container-lowest flex items-center justify-center shadow-md shadow-emerald-500/20 mb-space-md transition-all duration-300';
+    fbIconSym.textContent = 'check';
+    fbTitle.className = 'font-headline-lg text-headline-lg font-bold text-emerald-500 tracking-tight mb-1 transition-colors duration-300';
+    fbTitle.textContent = 'Correct!';
+    fbSub1.textContent = 'Great job!';
+    fbSub2.textContent = 'Keep it up!';
+    fbActionWrap.classList.add('hidden');
+
+    progRing.setAttribute('stroke-dashoffset', '60.32');
+    progRing.setAttribute('class', 'text-emerald-500 transition-all duration-700 ease-out');
+    accCounter.textContent = '85%';
+    perfMetricName.textContent = 'Accuracy';
+    perfTrendWrap.className = 'flex items-center gap-1 font-label-sm text-label-sm font-semibold text-emerald-600';
+    perfTrendIcon.textContent = 'trending_up';
+    perfTrendText.textContent = '+4% vs last practice';
+
+    tipIcon.textContent = 'lightbulb';
+    tipIcon.className = 'material-symbols-outlined text-primary text-[20px]';
+    tipHeadline.textContent = 'Pose Diagnostic:';
+    tipContent.textContent = 'All 21 hand landmarks tracking accurately in bounding zone. Maintain current camera distance.';
+    tipPill1.textContent = 'Finger Spacing: 96%';
+    tipPill2.textContent = 'Wrist Elevation: Optimal';
+    statHold.textContent = '1.8s / 2.0s';
+    statLat.textContent = '42 ms (Real-time)';
+  }
+  else if (state === 'partial') {
+    hudBrackets.forEach(b => { if (b) b.setAttribute('class', 'w-10 h-10 text-amber-500 drop-shadow-sm transition-colors duration-300'); });
+    hudDot.className = 'w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse';
+    hudText.textContent = 'Hand Orientation: 15Â° Offset';
+    hudBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-950/80 backdrop-blur-sm text-amber-200 border border-amber-500/40 font-label-sm text-label-sm shadow-md';
+    footIcon.className = 'material-symbols-outlined text-[16px] text-amber-500';
+    footIcon.textContent = 'warning';
+    footText.textContent = 'Landmark Warning: Wrist pitch deviation detected';
+    feedBottomDot.className = 'w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse';
+    feedBottomLabel.textContent = 'FHD 60FPS (Warning)';
+
+    badgeDot.className = 'w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse';
+    badgeText.textContent = 'Partial Alignment';
+    badgeLive.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-label-sm text-label-sm';
+
+    fbGlow.className = 'absolute -top-12 -right-12 w-32 h-32 bg-amber-100/70 rounded-full blur-2xl pointer-events-none transition-all duration-300';
+    fbIconBox.className = 'w-16 h-16 rounded-full bg-amber-500 text-surface-container-lowest flex items-center justify-center shadow-md shadow-amber-500/30 mb-space-md transition-all duration-300';
+    fbIconSym.textContent = 'hand_gesture';
+    fbTitle.className = 'font-headline-lg text-headline-lg font-bold text-amber-500 tracking-tight mb-1 transition-colors duration-300';
+    fbTitle.textContent = 'Almost there!';
+    fbSub1.textContent = 'Keep your dominant wrist elevated higher';
+    fbSub2.textContent = 'Align palms parallel to chest plane';
+    fbActionWrap.classList.remove('hidden');
+    fbActionBtn.className = 'w-full py-2 px-3 rounded-lg bg-amber-500 hover:bg-amber-600 text-surface-container-lowest font-label-sm text-label-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm';
+    fbActionBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">tune</span><span>Adjust & Re-check</span>';
+
+    progRing.setAttribute('stroke-dashoffset', '152.8');
+    progRing.setAttribute('class', 'text-amber-500 transition-all duration-700 ease-out');
+    accCounter.textContent = '62%';
+    perfMetricName.textContent = 'Match Score';
+    perfTrendWrap.className = 'flex items-center gap-1 font-label-sm text-label-sm font-semibold text-amber-600';
+    perfTrendIcon.textContent = 'straight';
+    perfTrendText.textContent = '-18% offset threshold';
+
+    tipIcon.textContent = 'tune';
+    tipIcon.className = 'material-symbols-outlined text-amber-500 text-[20px]';
+    tipHeadline.textContent = 'Landmark Breakdown:';
+    tipContent.textContent = 'Dominant hand pitch is rotated 15Â° forward relative to ISL standard Thank-You sign form.';
+    tipPill1.textContent = 'Finger Spacing: Good (92%)';
+    tipPill2.textContent = 'Wrist Angle: Low (54%)';
+    statHold.textContent = '1.2s / 2.0s';
+    statLat.textContent = '48 ms';
+  }
+  else if (state === 'try_again') {
+    hudBrackets.forEach(b => { if (b) b.setAttribute('class', 'w-10 h-10 text-rose-500 drop-shadow-sm transition-colors duration-300'); });
+    hudDot.className = 'w-1.5 h-1.5 rounded-full bg-rose-400 animate-ping';
+    hudText.textContent = 'Motion Blur Detected â€¢ Repeat slowly';
+    hudBadge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-950/85 backdrop-blur-sm text-rose-200 border border-rose-500/40 font-label-sm text-label-sm shadow-md';
+    footIcon.className = 'material-symbols-outlined text-[16px] text-rose-500';
+    footIcon.textContent = 'error_outline';
+    footText.textContent = 'Incomplete Keyframe Capture (Confidence: 34%)';
+    feedBottomDot.className = 'w-2.5 h-2.5 rounded-full bg-rose-400 animate-ping';
+    feedBottomLabel.textContent = 'Motion Detected';
+
+    badgeDot.className = 'w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse';
+    badgeText.textContent = 'Low Confidence';
+    badgeLive.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 font-label-sm text-label-sm';
+
+    fbGlow.className = 'absolute -top-12 -right-12 w-32 h-32 bg-rose-100/70 rounded-full blur-2xl pointer-events-none transition-all duration-300';
+    fbIconBox.className = 'w-16 h-16 rounded-full bg-rose-500 text-surface-container-lowest flex items-center justify-center shadow-md shadow-rose-500/30 mb-space-md transition-all duration-300';
+    fbIconSym.textContent = 'replay';
+    fbTitle.className = 'font-headline-lg text-headline-lg font-bold text-rose-500 tracking-tight mb-1 transition-colors duration-300';
+    fbTitle.textContent = 'Sign Not Recognized';
+    fbSub1.textContent = 'Movement too fast or outside gesture frame';
+    fbSub2.textContent = 'Hold gesture steady for at least 1.5 seconds';
+    fbActionWrap.classList.remove('hidden');
+    fbActionBtn.className = 'w-full py-2 px-3 rounded-lg bg-rose-500 hover:bg-rose-600 text-surface-container-lowest font-label-sm text-label-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm';
+    fbActionBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">refresh</span><span>Retry Gesture</span>';
+
+    progRing.setAttribute('stroke-dashoffset', '265.4');
+    progRing.setAttribute('class', 'text-rose-500 transition-all duration-700 ease-out');
+    accCounter.textContent = '34%';
+    perfMetricName.textContent = 'Confidence';
+    perfTrendWrap.className = 'flex items-center gap-1 font-label-sm text-label-sm font-semibold text-rose-600';
+    perfTrendIcon.textContent = 'trending_down';
+    perfTrendText.textContent = 'Below recognition floor (70%)';
+
+    tipIcon.textContent = 'speed';
+    tipIcon.className = 'material-symbols-outlined text-rose-500 text-[20px]';
+    tipHeadline.textContent = 'Actionable Tip:';
+    tipContent.textContent = 'Gesture speed exceeded 1.2m/s causing blur on finger tips. Smoothly guide hand from chin to neutral position.';
+    tipPill1.textContent = 'Hand Speed: Too Fast';
+    tipPill2.textContent = 'Target Hold: 1.5s Min';
+    statHold.textContent = '0.4s / 2.0s';
+    statLat.textContent = '51 ms';
+  }
+  else if (state === 'error') {
+    camErr.classList.remove('hidden');
+    if (camImg) camImg.style.filter = 'grayscale(100%) blur(4px)';
+    footIcon.className = 'material-symbols-outlined text-[16px] text-error';
+    footIcon.textContent = 'cloud_off';
+    footText.textContent = 'Video Stream Pipe Closed (ERR_DEVICE_BUSY)';
+    feedBottomDot.className = 'w-2.5 h-2.5 rounded-full bg-error animate-none';
+    feedBottomLabel.textContent = 'Offline';
+
+    badgeDot.className = 'w-1.5 h-1.5 rounded-full bg-error';
+    badgeText.textContent = 'Sensor Disconnected';
+    badgeLive.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error-container text-error font-label-sm text-label-sm';
+
+    fbGlow.className = 'absolute -top-12 -right-12 w-32 h-32 bg-surface-container rounded-full blur-2xl pointer-events-none transition-all duration-300';
+    fbIconBox.className = 'w-16 h-16 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center shadow-md mb-space-md transition-all duration-300';
+    fbIconSym.textContent = 'sensors_off';
+    fbTitle.className = 'font-headline-lg text-headline-lg font-bold text-outline tracking-tight mb-1 transition-colors duration-300';
+    fbTitle.textContent = 'Sensor Offline';
+    fbSub1.textContent = 'Hand landmarks not detected';
+    fbSub2.textContent = 'Ensure face and hands are clearly lit';
+    fbActionWrap.classList.remove('hidden');
+    fbActionBtn.className = 'w-full py-2 px-3 rounded-lg bg-primary hover:bg-primary/90 text-on-primary font-label-sm text-label-sm font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm';
+    fbActionBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">video_call</span><span>Reconnect Camera</span>';
+    fbActionBtn.onclick = function() { switchPracticeState('correct'); };
+
+    progRing.setAttribute('stroke-dashoffset', '402.12');
+    progRing.setAttribute('class', 'text-surface-container-high transition-all duration-700 ease-out');
+    accCounter.textContent = '--%';
+    perfMetricName.textContent = 'Stream Status';
+    perfTrendWrap.className = 'flex items-center gap-1 font-label-sm text-label-sm font-semibold text-outline';
+    perfTrendIcon.textContent = 'sync_disabled';
+    perfTrendText.textContent = 'Awaiting video stream';
+
+    tipIcon.textContent = 'info';
+    tipIcon.className = 'material-symbols-outlined text-outline text-[20px]';
+    tipHeadline.textContent = 'Hardware Diagnostics:';
+    tipContent.textContent = 'No frames received in the last 4000ms. Check browser device access in Chrome/Edge settings.';
+    tipPill1.textContent = 'FPS: 0';
+    tipPill2.textContent = 'Status: Disconnected';
+    statHold.textContent = '0.0s / 2.0s';
+    statLat.textContent = '-- ms';
+  }
+}
+</script>
+</div>
+</div>
+<script>
+  (function() {
+    // Highlight Active Sidebar Item corresponding to Reference Image (Translation / Sign Learning)
+    const activePaths = ['translation', 'sign-learning'];
+    const navLinks = document.querySelectorAll('aside nav a');
+    navLinks.forEach(link => {
+      const path = link.getAttribute('data-path');
+      if (path === 'translation') {
+        link.className = 'flex items-center gap-space-md px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary transition-colors font-headline-sm text-headline-sm shadow-sm';
+      }
+    });
+
+    // Next Sign Interactive Feedback
+    const nextBtn = document.getElementById('next-sign-btn');
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        this.classList.add('rotate-45');
+        setTimeout(() => {
+          this.classList.remove('rotate-45');
+        }, 200);
+      });
+    }
+
+    // Micro-interaction: Progress animation on mount
+    const progressRing = document.getElementById('progress-ring');
+    const counter = document.getElementById('accuracy-counter');
+    if (progressRing && counter) {
+      let currentVal = 0;
+      const targetVal = 85;
+      const duration = 800;
+      const stepTime = 15;
+      const steps = duration / stepTime;
+      const increment = targetVal / steps;
+
+      const timer = setInterval(() => {
+        currentVal += increment;
+        if (currentVal >= targetVal) {
+          currentVal = targetVal;
+          clearInterval(timer);
+        }
+        counter.textContent = Math.round(currentVal) + '%';
+      }, stepTime);
+    }
+  })();
+</script></main></div>
+
+</body></html>
